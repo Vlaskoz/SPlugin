@@ -10,7 +10,7 @@
 local sPluginFolder = script.Parent
 local sPluginUI = sPluginFolder.SPluginUI
 local Modules = sPluginFolder.Modules
-local createButton = sPluginUI.CreateButtonFolder.CreateButton
+local createButton = sPluginUI.PageFrames.HomeFrame.CreateButtonFolder.CreateButton
 local versionLabel = sPluginUI.Version
 local pluginInfoModule = require(Modules.PluginInfo)
 local createButtonModule = require(Modules.CreateButton)
@@ -18,7 +18,7 @@ local createButtonModule = require(Modules.CreateButton)
 -- // Retrieve plugin info
 
 local pluginTitle = pluginInfoModule.RetrievePluginTitle()
-local pluginVersion = pluginInfoModule.RetreievePluginVersion()
+local pluginVersion = pluginInfoModule.RetrievePluginVersion()
 
 -- // Setting up the plugin
 
@@ -41,10 +41,13 @@ sPluginWidget.Title = pluginTitle
 sPluginWidget.Name = "SPlugin"
 sPluginUI.Parent = sPluginWidget
 
+-- // Changing Version Text
+
+versionLabel.Text = pluginVersion
+
 -- // Opening of the plugin
 
 sPlugin.Click:Connect(function()
-	versionLabel.Text = pluginVersion
     sPluginWidget.Enabled = not sPluginWidget.Enabled
 end)
 
