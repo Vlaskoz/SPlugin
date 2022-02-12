@@ -23,7 +23,7 @@ local pluginVersion = pluginInfoModule.RetrievePluginVersion()
 -- // Setting up the plugin
 
 local toolBar = plugin:CreateToolbar("SPlugin")
-local sPlugin = toolBar:CreateButton("Simplify","Simplifying plugin design","rbxassetid://7072706536")
+local sPlugin = toolBar:CreateButton("Simplify","Simplifying plugin design","rbxassetid://8808286030")
 
 -- // Setting up the widget
 local sPluginWidgetInfo = DockWidgetPluginGuiInfo.new(
