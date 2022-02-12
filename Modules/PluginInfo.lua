@@ -7,7 +7,7 @@ function pluginInfoModule.RetrievePluginTitle()
 	return pluginTitle
 end
 
-function pluginInfoModule.RetreievePluginVersion()
+function pluginInfoModule.RetrievePluginVersion()
 	return pluginVersion
 end
 
