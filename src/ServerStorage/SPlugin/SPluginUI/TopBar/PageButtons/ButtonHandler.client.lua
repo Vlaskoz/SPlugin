@@ -6,9 +6,10 @@ local presetsButton = pageButtons.PresetsButton
 local onHoverColour = Color3.fromRGB(150,150,150)
 local regularColour = Color3.fromRGB(100,100,100)
 local onClickedColor = Color3.fromRGB(200,200,200)
-local homeIsClicked = false
+local homeIsClicked = true
 local presetsIsClicked = false
 local debounce = false
+
 
 -- homeButton functions
 
@@ -27,10 +28,10 @@ homeButton.MouseButton1Down:Connect(function()
 		debounce = true
 		homeIsClicked = true
 		presetsIsClicked = false
-		pageFrames.HomeFrame.Visible = true
 		tweenModule.Tween(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut, homeButton, {TextColor3 = onClickedColor})
 		tweenModule.Tween(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut, presetsButton, {TextColor3 = regularColour})
 		tweenModule.Tween(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut, pageFrames.PresetsFrame, {Position = UDim2.new(1.5,0,1,0)})
+		pageFrames.HomeFrame.Visible = true
 		tweenModule.Tween(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut, pageFrames.HomeFrame, {Position = UDim2.new(0.5,0,1,0)})
 		task.wait(0.5)
 		pageFrames.PresetsFrame.Visible = false
@@ -56,10 +57,10 @@ presetsButton.MouseButton1Down:Connect(function()
 		debounce = true
 		presetsIsClicked = true
 		homeIsClicked = false
-		pageFrames.PresetsFrame.Visible = true
 		tweenModule.Tween(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut, presetsButton, {TextColor3 = onClickedColor})
 		tweenModule.Tween(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut, homeButton, {TextColor3 = regularColour})
 		tweenModule.Tween(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut, pageFrames.HomeFrame, {Position = UDim2.new(-1.5,0,1,0)})
+		pageFrames.PresetsFrame.Visible = true
 		tweenModule.Tween(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut, pageFrames.PresetsFrame, {Position = UDim2.new(0.5,0,1,0)})
 		task.wait(0.5)
 		pageFrames.HomeFrame.Visible = false
